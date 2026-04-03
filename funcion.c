@@ -1,5 +1,14 @@
 #include<stdio.h>
+#include<string.h>
 #include<unistd.h>
+
+/*vertex*/
+struct vertex {
+    struct vertex *next;
+    char *val;
+};
+
+
 void saludar() {
     printf("¡Hola desde la función C!\n");
 }
@@ -12,3 +21,23 @@ void despedir() {
     }
     printf("Adios a todos desde C, este ingerto de lenguajes los quiere\n\n");
 }
+
+
+/*theory of graphes*/
+void graph_function() {
+    char text[] = "texto partido en partes con C";
+    char *token = strtok(text," ");
+    while (token) {
+        printf("%s\n",token);
+        token = strtok(NULL," ");
+    }
+    
+}
+
+/*void digraph_function(char &graph) {
+
+}
+
+void tree_function(char &graph) {
+
+}*/

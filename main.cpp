@@ -14,6 +14,7 @@ extern "C" {
     Obj* create_object(int id);
     int object_comand(Obj* obj, int command,int num);
     void destroy_object(Obj* obj);
+    void graph_function();
 }
 
 // Main function
@@ -31,6 +32,7 @@ int main(int argc,char *argv[]) {
     loop_func();
     despedir(); // Call the C function
 
+    graph_function();
 
     return 0;
 }
