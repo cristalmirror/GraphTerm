@@ -1,11 +1,12 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 #include<unistd.h>
 
 /*vertex*/
 struct vertex {
     struct vertex *next;
-    char *val;
+    char *edge;
 };
 
 
@@ -24,9 +25,15 @@ void despedir() {
 
 
 /*theory of graphes*/
-void graph_function() {
-    char text[] = "texto partido en partes con C";
-    char *token = strtok(text," ");
+void graph_function(char **data_graph) {
+    char text[]= "texto partido en partes con C";
+
+    //checking the repherense is NULL or not to charger the text
+    if (data_graph != NULL && *data_graph != NULL && **data_graph != '\0') { 
+        strcpy(text, *data_graph);
+    }
+
+    char *token = strtok(text,"_");
     while (token) {
         printf("%s\n",token);
         token = strtok(NULL," ");
