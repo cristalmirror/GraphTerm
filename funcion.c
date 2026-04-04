@@ -26,6 +26,7 @@ void despedir() {
 
 /*theory of graphes*/
 void graph_function(char **data_graph) {
+    printf("GRAPH FUNCTION RUN\n");
     char text[]= "texto partido en partes con C";
 
     //checking the repherense is NULL or not to charger the text
@@ -36,15 +37,39 @@ void graph_function(char **data_graph) {
     char *token = strtok(text,"_");
     while (token) {
         printf("%s\n",token);
-        token = strtok(NULL," ");
+        token = strtok(NULL,"_");
     }
     
 }
 
-/*void digraph_function(char &graph) {
+void digraph_function(char **data_graph) {
+    printf("DIGRAPH FUNCTION RUN\n");
+    char text[]= "texto partido en partes con C";
 
+    //checking the repherense is NULL or not to charger the text
+    if (data_graph != NULL && *data_graph != NULL && **data_graph != '\0') { 
+        strcpy(text, *data_graph);
+    }
+
+    char *token = strtok(text,"_");
+    while (token) {
+        printf("%s\n",token);
+        token = strtok(NULL,"_");
+    }
 }
 
-void tree_function(char &graph) {
+void tree_function(char **data_graph) {
+    printf("TREE FUNCTION RUN\n");
+    char text[]= "texto partido en partes con C";
 
-}*/
+    //checking the repherense is NULL or not to charger the text
+    if (data_graph != NULL && *data_graph != NULL && **data_graph != '\0') { 
+        strcpy(text, *data_graph);
+    }
+
+    char *token = strtok(text,"_");
+    while (token) {
+        printf("%s\n",token);
+        token = strtok(NULL,"_");
+    }
+}

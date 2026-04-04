@@ -15,6 +15,8 @@ extern "C" {
     int object_comand(Obj* obj, int command,int num);
     void destroy_object(Obj* obj);
     void graph_function(char **data_graph);
+    void digraph_function(char **data_graph);
+    void tree_function(char **data_graph);
 }
 
 // Main function
@@ -32,16 +34,15 @@ int main(int argc,char *argv[]) {
     loop_func();
     despedir(); // Call the C function
 
-    switch (stoi(argv[4],1))
+    switch (stoi(argv[4]))
     {
-    case constant expression:
-        /* code */
-        break;
-    
+    case 1: graph_function(&argv[3]); break;
+    case 2: digraph_function(&argv[3]); break;
+    case 3: tree_function(&argv[3]); break;
     default:
         break;
     }
-    graph_function(&argv[3]);
+    
 
     return 0;
 }
