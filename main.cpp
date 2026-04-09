@@ -34,13 +34,11 @@ int main(int argc,char *argv[]) {
     loop_func();
     despedir(); // Call the C function
 
-    switch (stoi(argv[4]))
-    {
-    case 1: graph_function(&argv[3]); break;
-    case 2: digraph_function(&argv[3]); break;
-    case 3: tree_function(&argv[3]); break;
-    default:
-        break;
+    switch (stoi(argv[4])) {
+        case 1: graph_function(&argv[3]); break;
+        case 2: digraph_function(&argv[3]); break;
+        case 3: tree_function(&argv[3]); break;
+        default: cerr << "Error: arguments are invalid " <<endl; break;
     }
     
 

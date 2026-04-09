@@ -51,6 +51,7 @@ void construction_GDT(struct vertex **v) {
 
 /*theory of graphes*/
 void graph_function(char **data_graph) {
+    int tam[2];
     printf("GRAPH FUNCTION RUN\n");
     printf("G=(V;A;\u03C6)\n");
     char text[]= "texto partido en partes con C";
@@ -60,8 +61,17 @@ void graph_function(char **data_graph) {
         strcpy(text, *data_graph);
     }
 
-    char *token = strtok(text,",");
-    while (token) {
+    char *token = strtok(text,"_");
+    token = strtok(NULL,"x");
+
+    for (int i = 0; i < 2; i++) {
+        tam[i] = atom(token[i]);
+    }
+
+    while (token) {       
+        token = strtok(NULL,"[");//delete this simbol
+        token = strtok(NULL,"]");//delete this simbol
+        
         printf("%s\n",token);
         token = strtok(NULL,",");
     }
