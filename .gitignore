@@ -1,1 +1,6 @@
 /target
+*.o
+*.obj
+*.so
+*.a
+*.lib
