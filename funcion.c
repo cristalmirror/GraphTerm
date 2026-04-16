@@ -60,13 +60,13 @@ void graph_function(char **data_graph) {
     //checking the repherense is NULL or not to charger the text
     if (data_graph != NULL && *data_graph != NULL && **data_graph != '\0') { 
         size_t new_size = strlen(*data_graph) + 1;
-        char *temp =(char *)realloc(text,sizeof(new_size));
+        char *temp =(char *)realloc(text,new_size);
         if (temp != NULL) {
             text = temp;
             strcpy(text, *data_graph);
         }
     }
-
+    printf("matrix load: %s\n\n",*data_graph);
     /*
         information that is necesary to 
         crete the matix
