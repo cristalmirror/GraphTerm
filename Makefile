@@ -9,11 +9,11 @@ CXXFLAGS = -Wall -std=c++23
 LDFLAGS = -lpthread -ldl
 
 #archive name
-TARGET = hibridexe
+TARGET = ./output/hibridexe
 RS_SRC = src/lib.rs
-RS_LIB = src/librust_part.a
-C_OBJ = funcion.o
-CPP_OBJ = main.o
+RS_LIB = ./output/librust_part.a
+C_OBJ = ./output/funcion.o
+CPP_OBJ = ./output/main.o
 
 #debug options
 .PHONY: debug
@@ -37,12 +37,12 @@ $(RS_LIB): $(RS_SRC)
 	$(RUSTC) --crate-type=staticlib $(RS_SRC) -o $(RS_LIB)
 
 #compile C object 
-$(C_OBJ): funcion.c 
-	$(CC) $(CFLAGS) -c funcion.c -o $(C_OBJ)
+$(C_OBJ): src/funcion.c 
+	$(CC) $(CFLAGS) -c src/funcion.c -o $(C_OBJ)
 
 #Compile the main object (C++)
-$(CPP_OBJ): main.cpp 
-	$(CXX) $(CXXFLAGS) -c main.cpp -o $(CPP_OBJ)
+$(CPP_OBJ): src/main.cpp 
+	$(CXX) $(CXXFLAGS) -c src/main.cpp -o $(CPP_OBJ)
 
 #archive generated cleaning
 clean: 
