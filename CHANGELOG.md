@@ -10,7 +10,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 - creacion de los elementos Nodo y vertices en forma de lista
 - crear un motor grafico que imprima el resultado grafico en la terminal
 
-## [0.0.1] - 2025-04-10
+## [0.0.1] - 2026-04-23
 ### Added
 - Estructura inicial del proyecto
 - `funcion.c` con funciones `graph_function`, `digraph_function`, `tree_function`
