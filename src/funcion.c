@@ -108,7 +108,7 @@ void graph_function(char **data_graph) {
     if(check_matix_validation(&matrix,f,c) == -1) { 
         exit(1); 
     } else {//if is valid make the graphe
-        struct vertex vert;
+        struct vertex *vert;
         init_struct_GDT(&vert);
         construction_GDT(&vert,&matrix,f,c);
     }

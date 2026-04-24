@@ -14,6 +14,8 @@ RS_SRC = src/lib.rs
 RS_LIB = ./output/librust_part.a
 C_OBJ = ./output/funcion.o
 CPP_OBJ = ./output/main.o
+LINK_OBJ = ./output/linker.o
+
 
 #debug options
 .PHONY: debug
@@ -29,12 +31,16 @@ all: $(TARGET)
 
 
 #linking code
-$(TARGET): $(CPP_OBJ) $(C_OBJ) $(RS_LIB)
-	$(CXX) $(CPP_OBJ) $(C_OBJ) $(RS_LIB) -o $(TARGET) $(LDFLAGS)
+$(TARGET): $(CPP_OBJ) $(C_OBJ) $(LINK_OBJ) $(RS_LIB)
+	$(CXX) $(CPP_OBJ) $(C_OBJ) $(LINK_OBJ) $(RS_LIB) -o $(TARGET) $(LDFLAGS)
 
 #compile static Rust lib
 $(RS_LIB): $(RS_SRC)
 	$(RUSTC) --crate-type=staticlib $(RS_SRC) -o $(RS_LIB)
+
+#compile C object list
+$(LINK_OBJ): src/linker.c
+	$(CC) $(CFLAGS) -c src/linker.c -o $(LINK_OBJ)
 
 #compile C object 
 $(C_OBJ): src/funcion.c 

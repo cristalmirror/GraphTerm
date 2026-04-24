@@ -19,6 +19,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/es/).
 - Creating the Node and Vertex elements as a list
 - Creating a graphics engine that prints the graphical result to the terminal
 
+## [0.0.2] - 2026-04-24
+
+### Changed
+- Remplace the `list.h` and `list.c` for `linker.h` and `linker.c`.
+- Modify the `Makefile` for the last point.
+### Added
+- the opetrations of linking can compile but warnings because is
+integrated in `graph_function(char **data_graph)` but i'm working on it.
+
+
 ## [0.0.1] - 2026-04-23
 ### Added
 - Initial project structure
