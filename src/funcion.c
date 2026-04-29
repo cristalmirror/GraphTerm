@@ -115,10 +115,11 @@ void graph_function(char **data_graph) {
     if(check_matix_validation(&matrix,f,c) == -1) { 
         exit(1); 
     } else {//if is valid make the graphe
-        struct vertex *vert;
+        struct vertex **vert;
+        int size = 0;
         init_struct_GDT(&vert);
-        construction_GDT(&vert,&matrix,f,c);
-        printing_GDT(&vert);
+        construction_GDT(&vert,&size,&matrix,f,c);
+        printing_GDT(vert,size);
     }
 
 

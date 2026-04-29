@@ -17,11 +17,13 @@ struct vertex {
     struct vertex **edge;
      //this pointer is a representation of a edge
     char *vertex_name; //name of vertex type data
+    int edge_count,total;
+    struct vertex **all;
 };
 
 //init element vertex
-void init_struct_GDT(struct vertex **v);
+void init_struct_GDT(struct vertex ***v);
 /*crete the struct that the matrix represent*/
-void construction_GDT(struct vertex **v, char ***matrix, int file, int colums);
+void construction_GDT(struct vertex ***v, int *size, char ***matrix, int file, int colums);
 /*printing vertex*/
-void printing_GDT(struct vertex **v);
+void printing_GDT(struct vertex **v, int size);

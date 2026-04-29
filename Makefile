@@ -22,7 +22,7 @@ LINK_OBJ = ./output/linker.o
 debug: CFLAGS += -g
 debug: CXXFLAGS += -g
 debug: RUST_FLAGS += -g
-debug: $(TARGET)
+debug: clean $(TARGET)   # ← forzá recompilación limpia
 
 
 # executable definitions
@@ -52,4 +52,4 @@ $(CPP_OBJ): src/main.cpp
 
 #archive generated cleaning
 clean: 
-	rm -f $(RS_LIB) *.o
+	rm -f $(RS_LIB) $(CPP_OBJ) $(C_OBJ) $(LINK_OBJ)
