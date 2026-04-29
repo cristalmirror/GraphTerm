@@ -18,17 +18,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/lang/es/).
 ### Added
 - Creating a graphics engine that prints the graphical result to the terminal
 - Fix this error:
-- ```c j=0 count=3
+- ```c
+  j=0 count=3
   p[0]=0
   p[1]=1
   p[2]=7
-j=1 count=1
+  j=1 count=1
   p[0]=8
 
-Program received signal SIGSEGV, Segmentation fault.
-0x0000555555567246 in construction_GDT (v=0x7fffffffd9c8, size=0x7fffffffd9c4, 
+  Program received signal SIGSEGV, Segmentation fault.
+  0x0000555555567246 in construction_GDT (v=0x7fffffffd9c8, size=0x7fffffffd9c4, 
     matrix=0x7fffffffd9d0, file=10, colums=7) at src/linker.c:49
-49	            aux[p[0]]->edge[pos[p[0]]] = aux[p[0]];```
+  49	            aux[p[0]]->edge[pos[p[0]]] = aux[p[0]];
+  ```
 ## [0.0.4] - 2026-04-29
 
 ### Change
